@@ -1,6 +1,7 @@
 from .... import db
 from ....api.constants import OrganisationUserRole
 from ....api.context import Context
+from ....core.feature_toggle_checker import is_feature_enabled
 from ....db.api.organization import Organization
 from ....db import models
 
@@ -37,6 +38,7 @@ def get_organization(context: Context, source, organizationUri=None):
         )
 
 
+@is_feature_enabled('core.list_organizations')
 def list_organizations(context: Context, source, filter=None):
     if not filter:
         filter = {'page': 1, 'pageSize': 5}

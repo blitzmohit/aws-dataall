@@ -1,13 +1,22 @@
 {
     "modules": {
+        "sagemaker_base": {
+            "active": false
+        },
         "notebooks": {
-            "active": true
+            "active": false
         },
         "datasets": {
             "active": true
         },
         "worksheets": {
+            "active": false
+        },
+        "dataset_sharing": {
             "active": true
         }
+    },
+    "core": {
+        "list_organizations": false
     }
 }
